@@ -13,37 +13,6 @@
 
 </div>
 
-## ✨ 功能特点
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 20px 0;">
-  <div>
-    <h4>✨ 即时创建</h4>
-    <p>无需注册，立即获得一个临时邮箱地址</p>
-  </div>
-  <div>
-    <h4>🔒 隐私保护</h4>
-    <p>保护您的真实邮箱，避免垃圾邮件和信息泄露</p>
-  </div>
-  <div>
-    <h4>⚡ 高速接收</h4>
-    <p>实时接收邮件，无需刷新页面</p>
-  </div>
-  <div>
-    <h4>🌐 全球可用</h4>
-    <p>基于Cloudflare构建，全球边缘网络加速</p>
-  </div>
-  <div>
-    <h4>🔄 自动刷新</h4>
-    <p>自动检查新邮件，确保不错过任何重要信息</p>
-  </div>
-  <div>
-    <h4>📱 响应式设计</h4>
-    <p>完美适配各种设备，从手机到桌面</p>
-  </div>
-</div>
-
----
-
 ## 🚀 快速部署
 
 ZMAIL 现在采用全新的一体化部署方式，前端和后端整合为一个 Cloudflare Worker，部署更加简单！
@@ -53,6 +22,7 @@ ZMAIL 现在采用全新的一体化部署方式，前端和后端整合为一�
 
 <div style="background-color: #2d2d2d; color: #ffffff; padding: 15px; border-radius: 5px; margin: 15px 0;">
   
+  <h4>📋 部署步骤：</h4>
   <ol>
     <li>Fork 本项目到您的 GitHub 账户</li>
     <li>在 Cloudflare Dashboard 中创建一个 D1 数据库，并记录下数据库的 <strong>database_name</strong> 和 <strong>database_id</strong></li>
