@@ -2,13 +2,9 @@
 
 # 🚀 ZMAIL - 24小时临时邮箱服务
 
-如果这个项目对您有帮助，请考虑给它一个 ⭐️ Star ⭐️，这将是对我最大的鼓励！
-
 <img src="frontend/public/favicon.svg" alt="ZMAIL Logo" width="120" height="120" style="background-color: #4f46e5; padding: 20px; border-radius: 12px; margin: 20px 0;">
 
 **💌 安全、简单、即用即走的临时邮箱服务**
-
-[🌐 在线体验](https://mail.mdzz.uk) • [✨ 功能特点](#-功能特点) • [🚀 部署](#-部署)
 
 ---
 
