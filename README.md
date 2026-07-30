@@ -52,21 +52,7 @@ ZMAIL 现在采用全新的一体化部署方式，前端和后端整合为一�
 #### 通过 Github Action 自定义部署
 
 <div style="background-color: #2d2d2d; color: #ffffff; padding: 15px; border-radius: 5px; margin: 15px 0;">
-  <h4>✅ 优点：</h4>
-  <ul>
-    <li>可以获得后续代码更新</li>
-    <li>完全自定义配置</li>
-    <li>更好的版本控制</li>
-    <li>通过 GitHub Action 自动部署，更加安全便捷</li>
-  </ul>
   
-  <h4>❌ 缺点：</h4>
-  <ul>
-    <li>需要一定的技术基础</li>
-    <li>需要手动创建数据库和配置密钥</li>
-  </ul>
-  
-  <h4>📋 部署步骤：</h4>
   <ol>
     <li>Fork 本项目到您的 GitHub 账户</li>
     <li>在 Cloudflare Dashboard 中创建一个 D1 数据库，并记录下数据库的 <strong>database_name</strong> 和 <strong>database_id</strong></li>
