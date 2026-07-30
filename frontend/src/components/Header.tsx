@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import LanguageSwitcher from './LanguageSwitcher';
 import HeaderMailbox from './HeaderMailbox';
 import Container from './Container';
 import { getEmailDomains, getDefaultEmailDomain, EMAIL_DOMAINS, DEFAULT_EMAIL_DOMAIN } from '../config';
@@ -65,9 +64,8 @@ const Header: React.FC<HeaderProps> = ({
               <div className="ml-3 pl-3 border-l border-border flex items-center">
                 {/* 在这里添加主题切换组件 */}
                 <ThemeSwitcher />
-                <LanguageSwitcher />
                 <a
-                  href="https://github.com/zaunist/zmail"
+                  href="https://github.com/wekh/zmail"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-8 h-8 flex items-center justify-center rounded-full transition-all duration-200 hover:bg-primary/15 hover:text-primary ml-1"

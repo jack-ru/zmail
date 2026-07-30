@@ -68,7 +68,7 @@ ZMAIL 现在采用全新的一体化部署方式，前端和后端整合为一�
 #### 方式一：一键部署（推荐新手）
 
 <div align="center">
-  <a href="http://deploy.workers.cloudflare.com/?url=https://github.com/zaunist/zmail" target="_blank">
+  <a href="http://deploy.workers.cloudflare.com/?url=https://github.com/wekh/zmail" target="_blank">
     <img src="https://deploy.workers.cloudflare.com/button" alt="Deploy to Cloudflare" />
   </a>
 </div>
@@ -94,7 +94,7 @@ ZMAIL 现在采用全新的一体化部署方式，前端和后端整合为一�
     <li>填写应用名称和数据库名称</li>
     <li>在高级设置 -> 构建变量中设置：
       <ul>
-        <li><code>VITE_EMAIL_DOMAIN</code>: 您的域名列表，使用 ',' 分割 (例如: wekh.eu.org,zaunist.com)</li>
+        <li><code>VITE_EMAIL_DOMAIN</code>: 您的域名列表，使用 ',' 分割 (例如: wekh.eu.org,example.com)</li>
       </ul>
     </li>
     <li>点击"创建和部署"</li>
