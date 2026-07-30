@@ -67,9 +67,9 @@ const EmailList: React.FC<EmailListProps> = ({
   // 后台轮询刷新不清空列表，避免每 10 秒闪烁一次、正在阅读的详情被卸载
   if ((isLoading && emails.length === 0) || isDeleting) {
     return (
-      <div className="border rounded-lg p-6">
+      <div className="rounded-2xl border border-border/60 bg-card shadow-apple p-6">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-lg font-semibold">{t('email.inbox')}</h2>
+          <h2 className="text-lg font-semibold tracking-tight">{t('email.inbox')}</h2>
         </div>
         <div className="flex justify-center items-center py-8">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
@@ -79,20 +79,20 @@ const EmailList: React.FC<EmailListProps> = ({
   }
   
   return (
-    <div className="border rounded-lg">
-      <div className="flex justify-between items-center p-4 border-b">
-        <h2 className="text-lg font-semibold">{t('email.inbox')}</h2>
-        <div className="flex items-center space-x-2">
+    <div className="rounded-2xl border border-border/60 bg-card shadow-apple overflow-hidden">
+      <div className="flex justify-between items-center px-5 py-4 border-b border-border/60">
+        <h2 className="text-lg font-semibold tracking-tight">{t('email.inbox')}</h2>
+        <div className="flex items-center space-x-1">
           <button
             onClick={handleRefresh}
-            className="p-1 rounded-md hover:bg-muted"
+            className="w-8 h-8 flex items-center justify-center rounded-full transition-colors hover:bg-muted"
             title={t('email.refresh')}
           >
             <i className={`fas fa-sync-alt text-sm ${isLoading ? 'fa-spin' : ''}`}></i>
           </button>
           <button
             onClick={toggleAutoRefresh}
-            className={`p-1 rounded-md ${autoRefresh ? 'text-primary' : 'text-muted-foreground'}`}
+            className={`w-8 h-8 flex items-center justify-center rounded-full transition-colors hover:bg-muted ${autoRefresh ? 'text-primary' : 'text-muted-foreground'}`}
             title={autoRefresh ? t('email.autoRefreshOn') : t('email.autoRefreshOff')}
           >
             <i className="fas fa-clock text-sm"></i>
@@ -101,7 +101,7 @@ const EmailList: React.FC<EmailListProps> = ({
       </div>
       
       {mailbox && (
-        <div className="px-4 py-2 bg-muted/30 border-b text-xs text-muted-foreground">
+        <div className="px-5 py-3 bg-muted/40 border-b border-border/60 text-xs text-muted-foreground">
           <div className="flex justify-between items-center mb-1">
             <span>{t('mailbox.created')}:</span>
             <span>{formatFullDate(mailbox.createdAt)}</span>
@@ -117,7 +117,7 @@ const EmailList: React.FC<EmailListProps> = ({
           <div className="flex justify-end mt-2">
             <button
               onClick={handleDeleteMailbox}
-              className="text-red-500 hover:text-red-600 text-xs flex items-center gap-1"
+              className="text-destructive hover:text-destructive/80 text-xs flex items-center gap-1 rounded-full px-2 py-1 transition-colors hover:bg-destructive/10"
               title={t('mailbox.delete')}
             >
               <i className="fas fa-trash-alt"></i>
@@ -127,7 +127,7 @@ const EmailList: React.FC<EmailListProps> = ({
         </div>
       )}
       
-      <div className="flex justify-between items-center px-4 py-2 bg-muted/30">
+      <div className="flex justify-between items-center px-5 py-2.5 bg-muted/40">
         <span className="text-sm text-muted-foreground">
           {emails.length} {emails.length === 1 ? t('email.message') : t('email.messages')}
         </span>
@@ -137,17 +137,18 @@ const EmailList: React.FC<EmailListProps> = ({
       </div>
       
       {emails.length === 0 ? (
-        <div className="p-6 text-center text-muted-foreground">
-          <p>{t('email.emptyInbox')}</p>
-          <p className="text-sm mt-2">{t('email.waitingForEmails')}</p>
+        <div className="p-10 text-center text-muted-foreground">
+          <i className="fas fa-inbox text-3xl mb-3 text-muted-foreground/50"></i>
+          <p className="font-medium text-foreground/80">{t('email.emptyInbox')}</p>
+          <p className="text-sm mt-1">{t('email.waitingForEmails')}</p>
         </div>
       ) : (
-        <ul className="divide-y">
+        <ul className="divide-y divide-border/60">
           {emails.map((email) => (
             <React.Fragment key={email.id}>
               <li 
-                className={`p-4 cursor-pointer hover:bg-muted/50 ${
-                  selectedEmailId === email.id ? 'bg-muted' : ''
+                className={`px-5 py-3.5 cursor-pointer transition-colors hover:bg-muted/50 ${
+                  selectedEmailId === email.id ? 'bg-muted/70' : ''
                 } ${!email.isRead ? 'font-semibold' : ''}`}
                 onClick={() => onSelectEmail(selectedEmailId === email.id ? null : email.id)}
               >
@@ -157,12 +158,12 @@ const EmailList: React.FC<EmailListProps> = ({
                     {formatShortDate(email.receivedAt)}
                   </span>
                 </div>
-                <div className="text-sm truncate">
+                <div className="text-sm truncate text-muted-foreground">
                   {email.subject || t('email.noSubject')}
                 </div>
               </li>
               {selectedEmailId === email.id && (
-                <li className="border-t border-muted">
+                <li className="border-t border-border/60 bg-muted/20">
                   <EmailDetail 
                     emailId={email.id} 
                     onClose={() => onSelectEmail(null)}

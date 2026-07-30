@@ -40,15 +40,21 @@ const Header: React.FC<HeaderProps> = ({
   }, []);
   
   return (
-    <header className="border-b">
+    <header className="sticky top-0 z-40 glass border-b border-border/60">
       <Container>
-        <div className="flex items-center justify-between py-3">
-          <Link to="/" className="text-2xl font-bold">
+        <div className="flex items-center justify-between py-3.5">
+          <Link
+            to="/"
+            className="flex items-center gap-2 text-[1.35rem] font-semibold tracking-tight text-foreground transition-opacity hover:opacity-70"
+          >
+            <span className="flex h-8 w-8 items-center justify-center rounded-[9px] bg-primary text-primary-foreground shadow-apple-sm">
+              <i className="fas fa-envelope text-sm"></i>
+            </span>
             {t('app.title')}
           </Link>
           
           {mailbox && (
-            <div className="flex items-center bg-muted/70 rounded-md px-3 py-1.5">
+            <div className="flex items-center rounded-full bg-muted/70 px-3 py-1.5 shadow-apple-sm">
               <HeaderMailbox 
                 mailbox={mailbox} 
                 onMailboxChange={onMailboxChange}
@@ -56,7 +62,7 @@ const Header: React.FC<HeaderProps> = ({
                 domains={emailDomains}
                 isLoading={isLoading}
               />
-              <div className="ml-3 pl-3 border-l border-muted-foreground/20 flex items-center">
+              <div className="ml-3 pl-3 border-l border-border flex items-center">
                 {/* 在这里添加主题切换组件 */}
                 <ThemeSwitcher />
                 <LanguageSwitcher />
@@ -64,7 +70,7 @@ const Header: React.FC<HeaderProps> = ({
                   href="https://github.com/zaunist/zmail"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-200 hover:bg-primary/20 hover:text-primary hover:scale-110 ml-1"
+                  className="w-8 h-8 flex items-center justify-center rounded-full transition-all duration-200 hover:bg-primary/15 hover:text-primary ml-1"
                   aria-label="GitHub"
                   title="GitHub"
                 >

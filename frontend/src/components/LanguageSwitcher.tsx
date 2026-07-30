@@ -36,7 +36,7 @@ const LanguageSwitcher: React.FC = () => {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-200 hover:bg-primary/20 hover:text-primary hover:scale-110"
+        className="w-8 h-8 flex items-center justify-center rounded-full transition-all duration-200 hover:bg-primary/15 hover:text-primary"
         aria-label={t('settings.language')}
         title={t('settings.language')}
       >
@@ -44,13 +44,13 @@ const LanguageSwitcher: React.FC = () => {
       </button>
       
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-40 bg-popover border rounded-md shadow-md z-10">
+        <div className="absolute right-0 mt-2 w-40 bg-popover border border-border/60 rounded-2xl shadow-apple-lg p-1 z-10">
           <ul className="py-1">
             {languages.map(lang => (
               <li key={lang.code}>
                 <button
                   onClick={() => changeLanguage(lang.code)}
-                  className={`w-full text-left px-4 py-2 transition-colors duration-200 hover:bg-primary/10 hover:text-primary ${
+                  className={`w-full text-left px-3 py-2 rounded-xl transition-colors duration-200 hover:bg-primary/10 hover:text-primary ${
                     lang.code === i18n.language ? 'font-bold' : ''
                   }`}
                 >

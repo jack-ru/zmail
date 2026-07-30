@@ -124,7 +124,7 @@ const HeaderMailbox: React.FC<HeaderMailboxProps> = ({
     const displayUsername = username.length > 10 ? `${username.substring(0, 8)}...` : username;
     
     return (
-      <code className="bg-muted px-2 py-1 rounded text-xs font-medium truncate max-w-[120px]">
+      <code className="bg-muted px-3 py-1.5 rounded-full text-xs font-medium truncate max-w-[120px]">
         {displayUsername}@{domainPart}
       </code>
     );
@@ -140,11 +140,11 @@ const HeaderMailbox: React.FC<HeaderMailboxProps> = ({
     await handleRefreshMailbox(newDomain);
   };
   
-  // 按钮基础样式
-  const buttonBaseClass = "flex items-center justify-center rounded-md transition-all duration-200";
-  const copyButtonClass = `${buttonBaseClass} hover:bg-primary/20 hover:text-primary hover:scale-110 mx-1`;
-  const refreshButtonClass = `${buttonBaseClass} bg-muted hover:bg-primary/20 hover:text-primary hover:scale-110 mr-1`;
-  const customizeButtonClass = `${buttonBaseClass} bg-primary text-primary-foreground hover:bg-primary/80 hover:scale-110`;
+  // 按钮基础样式（苹果风格：圆形按钮 + 轻微缩放反馈）
+  const buttonBaseClass = "flex items-center justify-center rounded-full transition-all duration-200 active:scale-95";
+  const copyButtonClass = `${buttonBaseClass} hover:bg-primary/15 hover:text-primary mx-1`;
+  const refreshButtonClass = `${buttonBaseClass} bg-muted hover:bg-primary/15 hover:text-primary mr-1`;
+  const customizeButtonClass = `${buttonBaseClass} bg-primary text-primary-foreground hover:bg-primary/85 shadow-apple-sm`;
   
   return (
     <div className="flex items-center">
@@ -159,14 +159,14 @@ const HeaderMailbox: React.FC<HeaderMailboxProps> = ({
                   setCustomAddress(e.target.value);
                   if (customAddressError) setCustomAddressError(null);
                 }}
-                className={`w-32 md:w-40 px-2 py-1 text-sm border rounded-l-md focus:outline-none focus:ring-1 focus:ring-primary ${
+                className={`w-32 md:w-40 px-3 py-1.5 text-sm border rounded-l-full focus:outline-none focus:ring-2 focus:ring-primary/40 ${
                   customAddressError ? 'border-red-500' : ''
                 }`}
                 placeholder={t('mailbox.customAddressPlaceholder')}
                 disabled={isActionLoading}
                 autoFocus
               />
-              <span className="flex items-center px-2 py-1 text-sm border-y border-r rounded-r-md bg-muted">
+              <span className="flex items-center px-3 py-1.5 text-sm border-y border-r rounded-r-full bg-muted">
                 @
                 {/* [fix]: 为select包裹一个relative容器，用于绝对定位自定义箭头 */}
                 <div className="relative">
@@ -188,14 +188,14 @@ const HeaderMailbox: React.FC<HeaderMailboxProps> = ({
             <button
               type="button"
               onClick={handleCancelCustom}
-              className="px-2 py-1 text-sm rounded-md bg-muted text-muted-foreground hover:bg-muted/80 transition-colors"
+              className="px-3 py-1.5 text-sm rounded-full bg-muted text-muted-foreground hover:bg-muted/80 transition-colors"
               disabled={isActionLoading}
             >
               {t('common.cancel')}
             </button>
             <button
               type="submit"
-              className="px-2 py-1 text-sm rounded-md bg-primary text-primary-foreground hover:bg-primary/80 transition-colors"
+              className="px-3 py-1.5 text-sm rounded-full bg-primary text-primary-foreground hover:bg-primary/85 transition-colors shadow-apple-sm"
               disabled={isActionLoading}
             >
               {isActionLoading ? t('common.loading') : t('common.create')}
@@ -215,7 +215,7 @@ const HeaderMailbox: React.FC<HeaderMailboxProps> = ({
           <div className="flex items-center">
             {/* 电脑端邮箱地址显示 */}
             <div className="hidden sm:flex items-center">
-              <code className="bg-muted px-2 py-1 rounded text-sm font-medium flex items-center">
+              <code className="bg-muted px-3 py-1.5 rounded-full text-sm font-medium flex items-center">
                 {mailbox.address}@
                 {/* [fix]: 为select包裹一个relative容器，用于绝对定位自定义箭头 */}
                 <div className="relative">

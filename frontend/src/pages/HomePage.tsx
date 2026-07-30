@@ -67,8 +67,8 @@ const HomePage: React.FC = () => {
       {/* 介绍内容区域 */}
       <div className="mt-8 space-y-6">
         {/* 功能介绍 */}
-        <section className="bg-card rounded-lg p-6 border">
-          <h2 className="text-xl font-semibold mb-4">{t('intro.features.title')}</h2>
+        <section className="bg-card rounded-2xl p-6 border border-border/60 shadow-apple">
+          <h2 className="text-xl font-semibold tracking-tight mb-4">{t('intro.features.title')}</h2>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
@@ -106,8 +106,8 @@ const HomePage: React.FC = () => {
         </section>
 
         {/* 使用场景 */}
-        <section className="bg-card rounded-lg p-6 border">
-          <h2 className="text-xl font-semibold mb-4">{t('intro.useCases.title')}</h2>
+        <section className="bg-card rounded-2xl p-6 border border-border/60 shadow-apple">
+          <h2 className="text-xl font-semibold tracking-tight mb-4">{t('intro.useCases.title')}</h2>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="text-center p-4">
                <i className="fas fa-check-circle text-2xl text-primary mb-3"></i>
@@ -128,8 +128,8 @@ const HomePage: React.FC = () => {
         </section>
 
         {/* 安全提示 */}
-        <section className="bg-card rounded-lg p-6 border">
-          <h2 className="text-xl font-semibold mb-4">{t('intro.security.title')}</h2>
+        <section className="bg-card rounded-2xl p-6 border border-border/60 shadow-apple">
+          <h2 className="text-xl font-semibold tracking-tight mb-4">{t('intro.security.title')}</h2>
           <div className="space-y-3">
             <div className="flex items-start space-x-3">
               <i className="fas fa-exclamation-triangle text-yellow-500 mt-1"></i>
@@ -147,8 +147,8 @@ const HomePage: React.FC = () => {
         </section>
 
         {/* 常见问题 */}
-        <section className="bg-card rounded-lg p-6 border">
-          <h2 className="text-xl font-semibold mb-4">{t('intro.faq.title')}</h2>
+        <section className="bg-card rounded-2xl p-6 border border-border/60 shadow-apple">
+          <h2 className="text-xl font-semibold tracking-tight mb-4">{t('intro.faq.title')}</h2>
           <div className="space-y-4">
             <div>
               <h3 className="font-medium mb-2">{t('intro.faq.q1.question')}</h3>

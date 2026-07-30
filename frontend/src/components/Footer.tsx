@@ -12,13 +12,13 @@ const Footer: React.FC<FooterProps> = ({ onShowInfo }) => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t py-6">
+    <footer className="border-t border-border/60 py-8">
       <Container>
-        <div className="text-center text-sm text-muted-foreground">
-          <p className="mb-2">
+        <div className="text-center text-xs text-muted-foreground">
+          <p className="mb-3 tracking-tight">
             © {year} {t("app.title")}
           </p>
-          <div className="flex flex-wrap justify-center items-center space-x-4 mb-2">
+          <div className="flex flex-wrap justify-center items-center gap-x-5 gap-y-2 mb-3">
             {/* 将 Link 组件修改为 button，点击时调用 onShowInfo 函数显示弹窗 */}
             <button
               onClick={() => onShowInfo("privacy")}
@@ -39,7 +39,7 @@ const Footer: React.FC<FooterProps> = ({ onShowInfo }) => {
               {t("common.about", "关于我们")}
             </button>
           </div>
-          <div className="flex justify-center items-center space-x-4">
+          <div className="flex flex-wrap justify-center items-center gap-x-5 gap-y-2">
             <a
               href="https://ajielu.vercel.app"
               target="_blank"

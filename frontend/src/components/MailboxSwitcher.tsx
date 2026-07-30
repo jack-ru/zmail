@@ -174,7 +174,7 @@ const MailboxSwitcher: React.FC<MailboxSwitcherProps> = ({
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setShowDropdown(!showDropdown)}
-        className="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-200 hover:bg-primary/20 hover:text-primary hover:scale-110 mr-1"
+        className="w-8 h-8 flex items-center justify-center rounded-full transition-all duration-200 hover:bg-primary/15 hover:text-primary mr-1"
         aria-label={t('mailbox.switch') || "切换邮箱"}
         title={t('mailbox.switch') || "切换邮箱"}
       >
@@ -183,12 +183,12 @@ const MailboxSwitcher: React.FC<MailboxSwitcherProps> = ({
 
       {showDropdown && (
         // [fix]: 将 bg-white 替换为 bg-popover 和 text-popover-foreground 以支持黑暗模式
-        <div className="absolute top-9 left-0 bg-popover text-popover-foreground border rounded-md shadow-lg p-1 z-20 min-w-[250px]">
-          <div className="text-xs font-medium px-2 py-1 text-muted-foreground flex justify-between items-center">
+        <div className="absolute top-10 left-0 bg-popover text-popover-foreground border border-border/60 rounded-2xl shadow-apple-lg p-1.5 z-20 min-w-[250px]">
+          <div className="text-xs font-medium px-2.5 py-1.5 text-muted-foreground flex justify-between items-center">
             {t('mailbox.savedMailboxes') || "已保存的邮箱"}
             <button
               onClick={handleClearAllMailboxes}
-              className="text-red-500 hover:text-red-700 text-xs"
+              className="text-destructive hover:text-destructive/80 text-xs"
               title={t('mailbox.clearAll') || "全部清除"}
             >
               <i className="fas fa-trash-alt mr-1"></i>
@@ -197,10 +197,10 @@ const MailboxSwitcher: React.FC<MailboxSwitcherProps> = ({
           </div>
           <div className="max-h-[400px] overflow-y-auto">
             {savedMailboxes.map((m) => (
-              <div key={m.address} className="flex items-center justify-between hover:bg-muted rounded-sm">
+              <div key={m.address} className="flex items-center justify-between hover:bg-muted rounded-xl">
                 <button
                   onClick={() => handleSwitchMailbox(m)}
-                  className={`w-full text-left text-sm px-2 py-1.5 transition-colors truncate ${
+                  className={`w-full text-left text-sm px-2.5 py-2 rounded-xl transition-colors truncate ${
                     m.address === currentMailbox.address ? 'bg-primary/10 text-primary font-medium' : ''
                   }`}
                 >
@@ -209,7 +209,7 @@ const MailboxSwitcher: React.FC<MailboxSwitcherProps> = ({
                 {m.address !== currentMailbox.address && (
                   <button
                     onClick={() => handleDeleteMailbox(m.address)}
-                    className="p-2 text-red-500 hover:text-red-700"
+                    className="p-2 text-destructive hover:text-destructive/80"
                     title={t('common.delete') || "删除"}
                   >
                     <i className="fas fa-trash-alt text-xs"></i>
