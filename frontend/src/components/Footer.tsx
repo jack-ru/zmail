@@ -39,35 +39,6 @@ const Footer: React.FC<FooterProps> = ({ onShowInfo }) => {
               {t("common.about", "关于我们")}
             </button>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-x-5 gap-y-2">
-            <a
-              href="https://ajielu.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors"
-            >
-              <i className="fas fa-blog mr-1"></i>
-              {t("common.blog")}
-            </a>
-            <a
-              href="https://www.youtube.com/@zaunist"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors"
-            >
-              <i className="fab fa-youtube mr-1"></i>
-              {t("common.youtube")}
-            </a>
-            <a
-              href="https://xugou.mdzz.uk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors"
-            >
-              <i className="fas fa-chart-line mr-1"></i>
-              {t("common.xugouMonitor")}
-            </a>
-          </div>
         </div>
       </Container>
     </footer>

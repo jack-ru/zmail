@@ -12,7 +12,7 @@
   <h3>💌 Secure, Simple, Disposable Email Service</h3>
 
   <p>
-    <a href="https://mail.mdzz.uk" target="_blank"><strong>🌐 Live Demo</strong></a> •
+    <a href="https://mail.wekh.eu.org" target="_blank"><strong>🌐 Live Demo</strong></a> •
     <a href="#features"><strong>✨ Features</strong></a> •
     <a href="#quick-deployment"><strong>🚀 Deployment</strong></a> •
     <a href="#local-development"><strong>💻 Development</strong></a> •
@@ -96,7 +96,7 @@ We provide two deployment methods, you can choose according to your needs:
     <li>Fill in application name and database name</li>
     <li>In Advanced Settings -> Build Variables, set:
       <ul>
-        <li><code>VITE_EMAIL_DOMAIN</code>: Your domain list, separated by ',' (e.g., mdzz.uk,zaunist.com)</li>
+        <li><code>VITE_EMAIL_DOMAIN</code>: Your domain list, separated by ',' (e.g., wekh.eu.org,zaunist.com)</li>
       </ul>
     </li>
     <li>Click "Create and Deploy"</li>
