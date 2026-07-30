@@ -2,7 +2,7 @@
 
 <div align="center">
   <p>
-    <a href="./README.en.md">English</a> | <strong>简体中文</strong>
+    <a href="./README.md"></a>
   </p>
 
   <p>如果这个项目对您有帮助，请考虑给它一个 ⭐️ Star ⭐️，这将是对我最大的鼓励！</p>
@@ -11,20 +11,7 @@
 
   <h3>💌 安全、简单、即用即走的临时邮箱服务</h3>
 
-  <p>
-    <a href="https://mail.wekh.eu.org" target="_blank"><strong>🌐 在线体验</strong></a> •
-    <a href="#功能特点"><strong>✨ 功能特点</strong></a> •
-    <a href="#快速部署"><strong>🚀 快速部署</strong></a> •
-    <a href="#本地开发"><strong>💻 本地开发</strong></a> •
-    <a href="#技术栈"><strong>🔧 技术栈</strong></a>
-  </p>
-
 </div>
-
----
-### **有人拿去批量薅羊毛，现在demo只能看，不能接收邮件**
-
----
 
 ## ✨ 功能特点
 
@@ -61,49 +48,8 @@
 
 ZMAIL 现在采用全新的一体化部署方式，前端和后端整合为一个 Cloudflare Worker，部署更加简单！
 
-### 🎯 部署方式选择
 
-我们提供两种部署方式，您可以根据需求选择：
-
-#### 方式一：一键部署（推荐新手）
-
-<div align="center">
-  <a href="http://deploy.workers.cloudflare.com/?url=https://github.com/wekh/zmail" target="_blank">
-    <img src="https://deploy.workers.cloudflare.com/button" alt="Deploy to Cloudflare" />
-  </a>
-</div>
-
-<div style="background-color: #2d2d2d; color: #ffffff; padding: 15px; border-radius: 5px; margin: 15px 0;">
-  <h4>✅ 优点：</h4>
-  <ul>
-    <li>部署简单，一键完成</li>
-    <li>无需修改配置文件</li>
-    <li>适合快速体验</li>
-  </ul>
-  
-  <h4>❌ 缺点：</h4>
-  <ul>
-    <li>无法获得后续代码更新</li>
-    <li>需要手动绑定自定义域名</li>
-  </ul>
-  
-  <h4>📋 部署步骤：</h4>
-  <ol>
-    <li>点击上方 "Deploy to Cloudflare" 按钮</li>
-    <li>按照页面提示连接您的 GitHub 账户</li>
-    <li>填写应用名称和数据库名称</li>
-    <li>在高级设置 -> 构建变量中设置：
-      <ul>
-        <li><code>VITE_EMAIL_DOMAIN</code>: 您的域名列表，使用 ',' 分割 (例如: wekh.eu.org,example.com)</li>
-      </ul>
-    </li>
-    <li>点击"创建和部署"</li>
-    <li>部署完成后，在 Cloudflare Workers 控制面板中绑定自定义域名</li>
-    <li>配置 Cloudflare Email 路由，将邮件转发到您的 Worker</li>
-  </ol>
-</div>
-
-#### 方式二：Fork 后通过 Github Action 自定义部署（推荐进阶用户）
+#### 通过 Github Action 自定义部署
 
 <div style="background-color: #2d2d2d; color: #ffffff; padding: 15px; border-radius: 5px; margin: 15px 0;">
   <h4>✅ 优点：</h4>
@@ -162,67 +108,4 @@ ZMAIL 现在采用全新的一体化部署方式，前端和后端整合为一�
 
 ---
 
-
-## 💻 本地开发
-
-### 🚀 开发
-
-<div style="background-color: #2d2d2d; color: #ffffff; padding: 15px; border-radius: 5px; margin: 15px 0;">
-
-```bash
-# 安装依赖
-pnpm install
-
-# 启动前端开发服务器
-pnpm dev:frontend
-
-# 启动后端开发服务器
-pnpm dev:backend
-```
-
 </div>
-
-### ⚙️ 部署
-
-<div style="background-color: #2d2d2d; color: #ffffff; padding: 15px; border-radius: 5px; margin: 15px 0;">
-
-```bash
-# 部署
-pnpm run deploy
-```
-
-</div>
-
----
-
-## 🔧 技术栈
-
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 20px 0;">
-  <div>
-    <h3>🎨 前端</h3>
-    <ul>
-      <li><strong>React</strong> - 用户界面库</li>
-      <li><strong>TypeScript</strong> - 类型安全的JavaScript超集</li>
-      <li><strong>Tailwind CSS</strong> - 实用优先的CSS框架</li>
-      <li><strong>Vite</strong> - 现代前端构建工具</li>
-    </ul>
-  </div>
-  <div>
-    <h3>⚙️ 后端</h3>
-    <ul>
-      <li><strong>Cloudflare Workers</strong> - 边缘计算平台</li>
-      <li><strong>Cloudflare D1</strong> - 边缘SQL数据库</li>
-      <li><strong>Cloudflare Email Workers</strong> - 邮件处理服务</li>
-    </ul>
-  </div>
-</div>
-
----
-
-## 👥 贡献指南
-
-欢迎提交Pull Request或Issue来改进这个项目！
-
-## 📄 许可证
-
-[MIT License](./LICENSE)
