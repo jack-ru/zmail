@@ -2,7 +2,7 @@
 
 <div align="center">
   <p>
-    <a href="./README.md"></a>
+    <a href="./README.en.md">English</a> | <strong>简体中文</strong>
   </p>
 
   <p>如果这个项目对您有帮助，请考虑给它一个 ⭐️ Star ⭐️，这将是对我最大的鼓励！</p>
@@ -11,40 +11,81 @@
 
   <h3>💌 安全、简单、即用即走的临时邮箱服务</h3>
 
+  <p>
+    <a href="https://mail.mdzz.uk" target="_blank"><strong>🌐 在线体验</strong></a> •
+    <a href="#功能特点"><strong>✨ 功能特点</strong></a> •
+    <a href="#部署"><strong>🚀 部署</strong></a>
+  </p>
+
 </div>
 
-## 🚀 快速部署
+---
+### **有人拿去批量薅羊毛，现在demo只能看，不能接收邮件**
 
-ZMAIL 现在采用全新的一体化部署方式，前端和后端整合为一个 Cloudflare Worker，部署更加简单！
+---
 
+## ✨ 功能特点
 
-#### 通过 Github Action 自定义部署
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 20px 0;">
+  <div>
+    <h4>✨ 即时创建</h4>
+    <p>无需注册，立即获得一个临时邮箱地址</p>
+  </div>
+  <div>
+    <h4>🔒 隐私保护</h4>
+    <p>保护您的真实邮箱，避免垃圾邮件和信息泄露</p>
+  </div>
+  <div>
+    <h4>⚡ 高速接收</h4>
+    <p>实时接收邮件，无需刷新页面</p>
+  </div>
+  <div>
+    <h4>🌐 全球可用</h4>
+    <p>基于Cloudflare构建，全球边缘网络加速</p>
+  </div>
+  <div>
+    <h4>🔄 自动刷新</h4>
+    <p>自动检查新邮件，确保不错过任何重要信息</p>
+  </div>
+  <div>
+    <h4>📱 响应式设计</h4>
+    <p>完美适配各种设备，从手机到桌面</p>
+  </div>
+</div>
+
+---
+
+## 🚀 部署
+
+ZMAIL 采用一体化部署方式，前端和后端整合为一个 Cloudflare Worker。
+
+### 部署方式：Fork 后通过 Github Action 自定义部署
 
 <div style="background-color: #2d2d2d; color: #ffffff; padding: 15px; border-radius: 5px; margin: 15px 0;">
-  
-  <h4>📋 部署步骤：</h4>
-  <ol>
-    <li>Fork 本项目到您的 GitHub 账户</li>
-    <li>在 Cloudflare Dashboard 中创建一个 D1 数据库，并记录下数据库的 <strong>database_name</strong> 和 <strong>database_id</strong></li>
-    <li>在您的 GitHub 仓库中, 前往 <strong>Settings</strong> > <strong>Secrets and variables</strong> > <strong>Actions</strong></li>
-    <li>点击 <strong>New repository secret</strong> 并添加以下五个密钥：
-      <ul>
-        <li><code>CF_API_TOKEN</code>: 你的 Cloudflare API Token。你可以在 <a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank">这里</a> 创建，使用 "Edit Cloudflare Workers" 模板即可。</li>
-        <li><code>CF_ACCOUNT_ID</code>: 你的 Cloudflare 账户 ID。你可以在 Workers 页面的右侧找到。</li>
-        <li><code>D1_DATABASE_ID</code>: 你在第二步中创建的 D1 数据库的 ID。</li>
-        <li><code>D1_DATABASE_NAME</code>: 你在第二步中创建的 D1 数据库的名称。</li>
-        <li><code>VITE_EMAIL_DOMAIN</code>: 你的域名列表，多个域名用逗号 ',' 分割 (例如: example.com,test.com)。</li>
-      </ul>
-    </li>
-    <li>完成以上步骤后，项目将在每次推送到 <code>main</code> 分支时自动部署。你也可以在 Actions 页面手动触发部署。</li>
-    <li>部署完成后，为你的 Worker 绑定一个自定义域名。</li>
-    <li>最后，配置 Cloudflare Email 路由，将邮件转发到你的 Worker。</li>
-  </ol>
+
+#### 📋 部署步骤：
+
+<ol>
+  <li>Fork 本项目到您的 GitHub 账户</li>
+  <li>在 Cloudflare Dashboard 中创建一个 D1 数据库，并记录下数据库的 <strong>database_name</strong> 和 <strong>database_id</strong></li>
+  <li>在您的 GitHub 仓库中，前往 <strong>Settings</strong> &gt; <strong>Secrets and variables</strong> &gt; <strong>Actions</strong></li>
+  <li>点击 <strong>New repository secret</strong> 并添加以下五个密钥：
+    <ul>
+      <li><code>CF_API_TOKEN</code>: 你的 Cloudflare API Token。你可以在 <a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank">这里</a> 创建，使用 "Edit Cloudflare Workers" 模板即可。</li>
+      <li><code>CF_ACCOUNT_ID</code>: 你的 Cloudflare 账户 ID。你可以在 Workers 页面的右侧找到。</li>
+      <li><code>D1_DATABASE_ID</code>: 你在第二步中创建的 D1 数据库的 ID。</li>
+      <li><code>D1_DATABASE_NAME</code>: 你在第二步中创建的 D1 数据库的名称。</li>
+      <li><code>VITE_EMAIL_DOMAIN</code>: 你的域名列表，多个域名用逗号 ',' 分割 (例如: example.com,test.com)。</li>
+    </ul>
+  </li>
+  <li>完成以上步骤后，项目将在每次推送到 <code>main</code> 分支时自动部署。你也可以在 Actions 页面手动触发部署。</li>
+  <li>部署完成后，为你的 Worker 绑定一个自定义域名。</li>
+  <li>最后，配置 Cloudflare Email 路由，将邮件转发到你的 Worker。</li>
+</ol>
+
 </div>
 
 ### 📧 配置邮件路由
-
-无论选择哪种部署方式，都需要配置 Cloudflare Email 路由：
 
 <div style="background-color: #2d2d2d; color: #ffffff; padding: 15px; border-radius: 5px; margin: 15px 0;">
   <ol>
@@ -60,8 +101,4 @@ ZMAIL 现在采用全新的一体化部署方式，前端和后端整合为一�
     </li>
     <li>如果有多个域名，请为每个域名重复上述步骤</li>
   </ol>
-</div>
-
----
-
 </div>
