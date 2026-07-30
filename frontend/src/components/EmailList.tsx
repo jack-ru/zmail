@@ -67,7 +67,7 @@ const EmailList: React.FC<EmailListProps> = ({
   // 后台轮询刷新不清空列表，避免每 10 秒闪烁一次、正在阅读的详情被卸载
   if ((isLoading && emails.length === 0) || isDeleting) {
     return (
-      <div className="rounded-2xl border border-border/60 bg-card shadow-apple p-6">
+      <div className="rounded-2xl border border-border/60 glass-card shadow-apple p-6">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-lg font-semibold tracking-tight">{t('email.inbox')}</h2>
         </div>
@@ -79,7 +79,7 @@ const EmailList: React.FC<EmailListProps> = ({
   }
   
   return (
-    <div className="rounded-2xl border border-border/60 bg-card shadow-apple overflow-hidden">
+    <div className="rounded-2xl border border-border/60 glass-card shadow-apple overflow-hidden">
       <div className="flex justify-between items-center px-5 py-4 border-b border-border/60">
         <h2 className="text-lg font-semibold tracking-tight">{t('email.inbox')}</h2>
         <div className="flex items-center space-x-1">

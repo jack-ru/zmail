@@ -67,19 +67,19 @@ const HomePage: React.FC = () => {
       {/* 介绍内容区域 */}
       <div className="mt-8 space-y-6">
         {/* 功能介绍 */}
-        <section className="bg-card rounded-2xl p-6 border border-border/60 shadow-apple">
+        <section className="glass-card rounded-2xl p-6 border border-border/60 shadow-apple hover-lift hover:shadow-apple-lg">
           <h2 className="text-xl font-semibold tracking-tight mb-4">{t('intro.features.title')}</h2>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
-                <i className="fas fa-shield-alt text-primary mt-1"></i>
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] bg-primary/10 text-primary"><i className="fas fa-shield-alt text-sm"></i></span>
                 <div>
                   <h3 className="font-medium">{t('intro.features.privacy.title')}</h3>
                   <p className="text-sm text-muted-foreground">{t('intro.features.privacy.description')}</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <i className="fas fa-clock text-primary mt-1"></i>
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] bg-primary/10 text-primary"><i className="fas fa-clock text-sm"></i></span>
                 <div>
                   <h3 className="font-medium">{t('intro.features.temporary.title')}</h3>
                   <p className="text-sm text-muted-foreground">{t('intro.features.temporary.description')}</p>
@@ -88,14 +88,14 @@ const HomePage: React.FC = () => {
             </div>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
-                <i className="fas fa-user-secret text-primary mt-1"></i>
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] bg-primary/10 text-primary"><i className="fas fa-user-secret text-sm"></i></span>
                 <div>
                   <h3 className="font-medium">{t('intro.features.anonymous.title')}</h3>
                   <p className="text-sm text-muted-foreground">{t('intro.features.anonymous.description')}</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <i className="fas fa-bolt text-primary mt-1"></i>
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] bg-primary/10 text-primary"><i className="fas fa-bolt text-sm"></i></span>
                 <div>
                   <h3 className="font-medium">{t('intro.features.instant.title')}</h3>
                   <p className="text-sm text-muted-foreground">{t('intro.features.instant.description')}</p>
@@ -106,21 +106,21 @@ const HomePage: React.FC = () => {
         </section>
 
         {/* 使用场景 */}
-        <section className="bg-card rounded-2xl p-6 border border-border/60 shadow-apple">
+        <section className="glass-card rounded-2xl p-6 border border-border/60 shadow-apple hover-lift hover:shadow-apple-lg">
           <h2 className="text-xl font-semibold tracking-tight mb-4">{t('intro.useCases.title')}</h2>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="text-center p-4">
-               <i className="fas fa-check-circle text-2xl text-primary mb-3"></i>
+               <span className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-[14px] bg-primary/10 text-primary text-xl"><i className="fas fa-check-circle"></i></span>
                <h3 className="font-medium mb-2">{t('intro.useCases.verification.title')}</h3>
                <p className="text-sm text-muted-foreground">{t('intro.useCases.verification.description')}</p>
              </div>
             <div className="text-center p-4">
-              <i className="fas fa-download text-2xl text-primary mb-3"></i>
+              <span className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-[14px] bg-primary/10 text-primary text-xl"><i className="fas fa-download"></i></span>
               <h3 className="font-medium mb-2">{t('intro.useCases.downloads.title')}</h3>
               <p className="text-sm text-muted-foreground">{t('intro.useCases.downloads.description')}</p>
             </div>
             <div className="text-center p-4">
-              <i className="fas fa-vial text-2xl text-primary mb-3"></i>
+              <span className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-[14px] bg-primary/10 text-primary text-xl"><i className="fas fa-vial"></i></span>
               <h3 className="font-medium mb-2">{t('intro.useCases.testing.title')}</h3>
               <p className="text-sm text-muted-foreground">{t('intro.useCases.testing.description')}</p>
             </div>
@@ -128,7 +128,7 @@ const HomePage: React.FC = () => {
         </section>
 
         {/* 安全提示 */}
-        <section className="bg-card rounded-2xl p-6 border border-border/60 shadow-apple">
+        <section className="glass-card rounded-2xl p-6 border border-border/60 shadow-apple hover-lift hover:shadow-apple-lg">
           <h2 className="text-xl font-semibold tracking-tight mb-4">{t('intro.security.title')}</h2>
           <div className="space-y-3">
             <div className="flex items-start space-x-3">
@@ -147,7 +147,7 @@ const HomePage: React.FC = () => {
         </section>
 
         {/* 常见问题 */}
-        <section className="bg-card rounded-2xl p-6 border border-border/60 shadow-apple">
+        <section className="glass-card rounded-2xl p-6 border border-border/60 shadow-apple hover-lift hover:shadow-apple-lg">
           <h2 className="text-xl font-semibold tracking-tight mb-4">{t('intro.faq.title')}</h2>
           <div className="space-y-4">
             <div>

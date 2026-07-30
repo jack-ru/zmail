@@ -45,12 +45,12 @@ const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center justify-between py-3.5">
           <Link
             to="/"
-            className="flex items-center gap-2 text-[1.35rem] font-semibold tracking-tight text-foreground transition-opacity hover:opacity-70"
+            className="flex items-center gap-2 text-[1.35rem] font-bold tracking-tight transition-opacity hover:opacity-70"
           >
-            <span className="flex h-8 w-8 items-center justify-center rounded-[9px] bg-primary text-primary-foreground shadow-apple-sm">
+            <span className="flex h-8 w-8 items-center justify-center rounded-[10px] bg-primary text-primary-foreground shadow-apple-sm">
               <i className="fas fa-envelope text-sm"></i>
             </span>
-            {t('app.title')}
+            <span className="gradient-text">{t('app.title')}</span>
           </Link>
           
           {mailbox && (
