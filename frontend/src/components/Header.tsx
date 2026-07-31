@@ -39,12 +39,11 @@ const Header: React.FC = () => {
               <rect x="1" y="1" width="38" height="38" rx="12" fill="url(#logoSheen)" />
               <text
                 x="20"
-                y="21.5"
+                y="25.5"
                 textAnchor="middle"
-                dominantBaseline="central"
                 fontFamily="-apple-system, BlinkMacSystemFont, 'SF Pro Display', Arial, sans-serif"
                 fontWeight="700"
-                fontSize="22"
+                fontSize="21"
                 fill="white"
               >
                 @
