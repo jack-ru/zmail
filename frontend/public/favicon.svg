@@ -9,9 +9,12 @@
       <stop offset="0%" stop-color="#ffffff" stop-opacity="0.4" />
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
     </linearGradient>
+    <clipPath id="envelopeClip">
+      <rect x="9" y="12" width="22" height="16" rx="3" />
+    </clipPath>
   </defs>
   <rect x="1" y="1" width="38" height="38" rx="12" fill="url(#logoBg)" />
   <rect x="1" y="1" width="38" height="38" rx="12" fill="url(#logoSheen)" />
   <rect x="9" y="12" width="22" height="16" rx="3" fill="white" />
-  <path d="M9 12 L20 21 L31 12 Z" fill="#cfe0ff" />
+  <path d="M9 12 L20 21 L31 12 Z" fill="#cfe0ff" clip-path="url(#envelopeClip)" />
 </svg>

@@ -15,9 +15,9 @@ const Header: React.FC = () => {
             to="/"
             className="flex items-center gap-2.5 transition-opacity hover:opacity-70"
           >
-            {/* 苹果风格圆角方形 App 图标：渐变底 + 居中信封图形。
+            {/* 苹果风格圆角方形 App 图标：渐变底 + 居中信封图形，与 favicon.svg 保持完全一致。
                 信封主体 rect(x=9,y=12,w=22,h=16) 的几何中心正好是 (20,20)，
-                即整个 40x40 图标的正中心，靠坐标计算保证绝对居中，不依赖字体基线 */}
+                即整个 40x40 图标的正中心；翻盖三角形用 clipPath 裁剪，避免尖角凸出圆角边界 */}
             <svg
               width="32"
               height="32"
@@ -36,11 +36,14 @@ const Header: React.FC = () => {
                   <stop offset="0%" stopColor="#ffffff" stopOpacity="0.4" />
                   <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
                 </linearGradient>
+                <clipPath id="envelopeClip">
+                  <rect x="9" y="12" width="22" height="16" rx="3" />
+                </clipPath>
               </defs>
               <rect x="1" y="1" width="38" height="38" rx="12" fill="url(#logoBg)" />
               <rect x="1" y="1" width="38" height="38" rx="12" fill="url(#logoSheen)" />
               <rect x="9" y="12" width="22" height="16" rx="3" fill="white" />
-              <path d="M9 12 L20 21 L31 12 Z" fill="#cfe0ff" />
+              <path d="M9 12 L20 21 L31 12 Z" fill="#cfe0ff" clipPath="url(#envelopeClip)" />
             </svg>
             <span className="gradient-text text-xl font-extrabold tracking-tight">
               {t('app.shortTitle')}
