@@ -81,6 +81,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    /* 禁止缩放：阻止双击放大与双指捏合缩放手势，配合 viewport meta 生效 */
+    touch-action: pan-x pan-y;
   }
 
   body {

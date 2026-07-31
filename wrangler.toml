@@ -21,7 +21,7 @@ VITE_EMAIL_DOMAIN = "${VITE_EMAIL_DOMAIN}"   # 这是邮箱域名的占位符
 
 # 配置邮件处理
 [triggers]
-crons = ["0 * * * *"]  # 每小时运行一次清理任务
+crons = ["*/15 * * * *"]  # 每15分钟运行一次清理任务（邮箱有效期已缩短为6小时，需更频繁清理）
 
 [build]
 command = "pnpm run build"

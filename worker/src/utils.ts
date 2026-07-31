@@ -20,10 +20,10 @@ export function generateRandomString(length: number): string {
    * @returns 随机邮箱地址
    */
   export function generateRandomAddress(): string {
-    // 生成12-16位随机字符
+    // 生成5-7位随机字符
     const lenByte = new Uint8Array(1);
     crypto.getRandomValues(lenByte);
-    const length = 12 + (lenByte[0] % 5);
+    const length = 5 + (lenByte[0] % 3);
     return generateRandomString(length);
   }
   

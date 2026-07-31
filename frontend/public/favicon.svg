@@ -1,16 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
   <defs>
-    <linearGradient id="logoBg" x1="4" y1="2" x2="36" y2="38" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#2c9bff" />
-      <stop offset="100%" stop-color="#5e5ce6" />
+    <linearGradient id="logoBg" x1="4" y1="2" x2="37" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5ec2ff" />
+      <stop offset="45%" stop-color="#0a84ff" />
+      <stop offset="100%" stop-color="#5b4fe0" />
     </linearGradient>
-    <linearGradient id="logoSheen" x1="20" y1="1" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+    <linearGradient id="logoSheen" x1="20" y1="1" x2="20" y2="18" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="0.35" />
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
     </linearGradient>
   </defs>
   <rect x="1" y="1" width="38" height="38" rx="11" fill="url(#logoBg)" />
   <rect x="1" y="1" width="38" height="38" rx="11" fill="url(#logoSheen)" />
-  <rect x="9" y="13" width="22" height="16" rx="4" fill="white" fill-opacity="0.96" />
-  <path d="M10.5 14.5L20 22L29.5 14.5" stroke="#2c6bd6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <rect x="9" y="13" width="22" height="15" rx="3" fill="#ffffff" />
+  <path d="M9 13.6L20 21.2L31 13.6Z" fill="#d9e9ff" />
+  <path d="M9 13.6L20 21.2L31 13.6" stroke="#0a63cf" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
 </svg>
