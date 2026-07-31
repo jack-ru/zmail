@@ -65,21 +65,13 @@ app.post('/api/mailboxes', async (c) => {
     customAddress = body.address.trim().toLowerCase();
   }
 
-  const expiresInHours = 6; // 固定6小时有效期
+  const expiresInHours = 24; // 固定24小时有效期
 
   // 获取客户端IP
   const ip = c.req.header('CF-Connecting-IP') || 'unknown';
 
   // 生成或使用提供的地址
-  // [fix] 随机前缀缩短为4-6位后碰撞概率上升，随机模式下失败自动重试几次
-  let address = customAddress || generateRandomAddress();
-  if (!customAddress) {
-    let attempts = 0;
-    while (attempts < 5 && await getMailbox(c.env.DB, address)) {
-      address = generateRandomAddress();
-      attempts++;
-    }
-  }
+  const address = customAddress || generateRandomAddress();
 
   // 检查邮箱是否已存在
   const existingMailbox = await getMailbox(c.env.DB, address);

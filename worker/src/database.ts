@@ -189,10 +189,10 @@ export async function cleanupExpiredMailboxes(db: D1Database): Promise<number> {
  */
 export async function cleanupExpiredMails(db: D1Database): Promise<number> {
   const now = getCurrentTimestamp();
-  const sixHoursAgo = now - 6 * 60 * 60; // 6小时前的时间戳（秒），与邮箱有效期保持一致
+  const oneDayAgo = now - 24 * 60 * 60; // 24小时前的时间戳（秒）
   
   // [refactor] 同样利用 ON DELETE CASCADE 特性简化逻辑
-  const result = await db.prepare(`DELETE FROM emails WHERE received_at <= ?`).bind(sixHoursAgo).run();
+  const result = await db.prepare(`DELETE FROM emails WHERE received_at <= ?`).bind(oneDayAgo).run();
   
   await cleanupOrphanedAttachments(db);
   

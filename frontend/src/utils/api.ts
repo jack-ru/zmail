@@ -4,7 +4,7 @@ import { API_BASE_URL } from "../config";
 const apiUrl = (path: string) => `${API_BASE_URL}${path}`;
 
 // 创建随机邮箱
-export const createRandomMailbox = async (expiresInHours = 6) => {
+export const createRandomMailbox = async (expiresInHours = 24) => {
   try {
     const requestBody = JSON.stringify({
       expiresInHours,
@@ -35,7 +35,7 @@ export const createRandomMailbox = async (expiresInHours = 6) => {
 };
 
 // 创建自定义邮箱
-export const createCustomMailbox = async (address: string, expiresInHours = 6) => {
+export const createCustomMailbox = async (address: string, expiresInHours = 24) => {
   try {
     if (!address.trim()) {
       return { success: false, error: 'Invalid address' };
