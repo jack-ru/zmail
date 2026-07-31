@@ -39,8 +39,8 @@ export default {
     await handleEmail(message, env);
   },
 
-  // 定时任务 - 每小时清理过期邮箱和过期邮件
-  // （不再删除"已读"邮件：用户打开过一次的邮件不应在保留期内消失，24 小时过期清理已足够）
+  // 定时任务 - 每15分钟清理过期邮箱和过期邮件
+  // （不再删除"已读"邮件：用户打开过一次的邮件不应在保留期内消失，6 小时过期清理已足够）
   async scheduled(_event: ScheduledEvent, env: Env, _ctx: ExecutionContext): Promise<void> {
     try {
       await ensureDatabase(env.DB);
