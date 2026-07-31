@@ -27,6 +27,8 @@
     "failed": "失败",
     "unknown": "未知",
     "empty": "暂无数据",
+    "switchToLight": "切换到浅色模式",
+    "switchToDark": "切换到深色模式",
     "privacyPolicy": "隐私政策",
     "terms": "使用条款",
     "about": "关于我们"

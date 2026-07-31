@@ -2,17 +2,15 @@
   <defs>
     <linearGradient id="logoBg" x1="4" y1="2" x2="37" y2="38" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#5ec2ff" />
-      <stop offset="45%" stop-color="#0a84ff" />
+      <stop offset="50%" stop-color="#0a84ff" />
       <stop offset="100%" stop-color="#5b4fe0" />
     </linearGradient>
-    <linearGradient id="logoSheen" x1="20" y1="1" x2="20" y2="18" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.35" />
+    <linearGradient id="logoSheen" x1="20" y1="1" x2="20" y2="16" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.4" />
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
     </linearGradient>
   </defs>
-  <rect x="1" y="1" width="38" height="38" rx="11" fill="url(#logoBg)" />
-  <rect x="1" y="1" width="38" height="38" rx="11" fill="url(#logoSheen)" />
-  <rect x="9" y="13" width="22" height="15" rx="3" fill="#ffffff" />
-  <path d="M9 13.6L20 21.2L31 13.6Z" fill="#d9e9ff" />
-  <path d="M9 13.6L20 21.2L31 13.6" stroke="#0a63cf" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <rect x="1" y="1" width="38" height="38" rx="12" fill="url(#logoBg)" />
+  <rect x="1" y="1" width="38" height="38" rx="12" fill="url(#logoSheen)" />
+  <text x="20" y="21.5" text-anchor="middle" dominant-baseline="central" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', Arial, sans-serif" font-weight="700" font-size="22" fill="white">@</text>
 </svg>

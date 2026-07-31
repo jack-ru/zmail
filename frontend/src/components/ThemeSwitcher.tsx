@@ -1,48 +1,50 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-/**
- * 主题切换组件
- * 用于在明亮和暗黑模式之间切换
- */
+type Theme = 'light' | 'dark';
+
+// 读取当前主题：优先用户手动选择过的偏好，其次跟随系统深色模式
+const getInitialTheme = (): Theme => {
+  try {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light' || saved === 'dark') return saved;
+  } catch {
+    // 忽略读取失败（隐私模式等场景）
+  }
+  return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+};
+
+const applyTheme = (theme: Theme) => {
+  document.documentElement.classList.toggle('dark', theme === 'dark');
+};
+
 const ThemeSwitcher: React.FC = () => {
   const { t } = useTranslation();
-  
-  // 从 localStorage 获取初始主题，如果不存在则默认为 'light'
-  const [theme, setTheme] = useState(() => {
-    const savedTheme = localStorage.getItem('theme');
-    return savedTheme || 'light';
-  });
+  const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
-  // 使用 useEffect 监听 theme 状态的变化，并应用到 <html> 元素上
+  // 首次挂载时同步一次 DOM class（index.html 里的内联脚本已提前设置，避免闪烁；这里做兜底）
   useEffect(() => {
-    const root = window.document.documentElement;
-    // 先移除旧的 class，以防万一
-    root.classList.remove(theme === 'light' ? 'dark' : 'light');
-    // 添加当前主题的 class
-    root.classList.add(theme);
-    // 将当前主题保存到 localStorage
-    localStorage.setItem('theme', theme);
+    applyTheme(theme);
   }, [theme]);
 
-  // 定义切换主题的函数
   const toggleTheme = () => {
-    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+    const next: Theme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    try {
+      localStorage.setItem('theme', next);
+    } catch {
+      // 忽略存储失败
+    }
   };
 
   return (
     <button
       onClick={toggleTheme}
       className="w-8 h-8 flex items-center justify-center rounded-full transition-all duration-200 hover:bg-primary/15 hover:text-primary"
-      aria-label={t('settings.toggleTheme', '切换主题')}
-      title={t('settings.toggleTheme', '切换主题')}
+      aria-label={theme === 'dark' ? t('common.switchToLight', '切换到浅色模式') : t('common.switchToDark', '切换到深色模式')}
+      title={theme === 'dark' ? t('common.switchToLight', '切换到浅色模式') : t('common.switchToDark', '切换到深色模式')}
     >
-      {/* 根据当前主题显示不同的图标 */}
-      {theme === 'light' ? (
-        <i className="fas fa-moon text-base"></i> // 亮色模式下，显示月亮图标以切换到暗色
-      ) : (
-        <i className="fas fa-sun text-base"></i> // 暗色模式下，显示太阳图标以切换到亮色
-      )}
+      <i className={`fas ${theme === 'dark' ? 'fa-sun' : 'fa-moon'} text-sm`}></i>
     </button>
   );
 };

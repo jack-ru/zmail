@@ -31,6 +31,25 @@ document.addEventListener(
   { passive: false }
 );
 
+// 桌面端：拦截 Ctrl/Cmd + 滚轮缩放
+document.addEventListener(
+  'wheel',
+  (e) => {
+    if (e.ctrlKey) {
+      e.preventDefault();
+    }
+  },
+  { passive: false }
+);
+
+// 桌面端：拦截 Ctrl/Cmd + '+' / '-' / '0' 缩放快捷键
+document.addEventListener('keydown', (e) => {
+  const isZoomKey = ['=', '+', '-', '_', '0'].includes(e.key);
+  if ((e.ctrlKey || e.metaKey) && isZoomKey) {
+    e.preventDefault();
+  }
+});
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter {...router}>

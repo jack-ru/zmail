@@ -129,7 +129,7 @@ const MailboxHero: React.FC<MailboxHeroProps> = ({
                   setCustomAddress(e.target.value);
                   if (customAddressError) setCustomAddressError(null);
                 }}
-                className="flex-1 min-w-0 px-4 py-3 text-sm sm:text-base font-mono focus:outline-none bg-transparent"
+                className="flex-1 min-w-0 px-4 py-3 text-base font-mono focus:outline-none bg-transparent"
                 placeholder={t('mailbox.customAddressPlaceholder')}
                 disabled={isActionLoading}
                 autoFocus
