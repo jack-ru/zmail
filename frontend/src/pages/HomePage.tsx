@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import EmailList from '../components/EmailList';
+import MailboxHero from '../components/MailboxHero';
 import { MailboxContext } from '../contexts/MailboxContext';
+import { useEmailDomains } from '../hooks/useEmailDomains';
 import Container from '../components/Container';
 
 // 添加结构化数据组件
@@ -37,26 +39,27 @@ const HomePage: React.FC = () => {
   const { t } = useTranslation();
   const { 
     mailbox, 
+    setMailbox,
     isLoading, 
     emails, 
     selectedEmail, 
     setSelectedEmail, 
     isEmailsLoading
   } = useContext(MailboxContext);
-  
-  if (isLoading) {
-    return (
-      <Container>
-        <div className="flex justify-center items-center min-h-[50vh]">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-        </div>
-      </Container>
-    );
-  }
+  const { emailDomains, defaultDomain } = useEmailDomains();
   
   return (
     <Container>
       <StructuredData />
+
+      <MailboxHero
+        mailbox={mailbox}
+        onMailboxChange={setMailbox}
+        domain={defaultDomain}
+        domains={emailDomains}
+        isLoading={isLoading}
+      />
+
       <EmailList 
         emails={emails} 
         selectedEmailId={selectedEmail}

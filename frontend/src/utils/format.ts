@@ -46,3 +46,15 @@ export const formatFileSize = (bytes: number): string => {
 
   return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
 };
+
+// 剩余时间倒计时，格式为 HH:MM（超过 99 小时时钟点位自动扩展），已过期返回 null
+export const formatCountdown = (expiresAt: number): string | null => {
+  if (!expiresAt) return null;
+  const secondsLeft = expiresAt - Math.floor(Date.now() / 1000);
+  if (secondsLeft <= 0) return null;
+
+  const hours = Math.floor(secondsLeft / 3600);
+  const minutes = Math.floor((secondsLeft % 3600) / 60);
+  const pad = (n: number) => String(n).padStart(2, '0');
+  return `${pad(hours)}:${pad(minutes)}`;
+};

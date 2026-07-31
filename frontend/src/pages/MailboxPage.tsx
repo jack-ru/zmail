@@ -2,7 +2,9 @@ import React, { useEffect, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import EmailList from '../components/EmailList';
+import MailboxHero from '../components/MailboxHero';
 import { MailboxContext } from '../contexts/MailboxContext';
+import { useEmailDomains } from '../hooks/useEmailDomains';
 import Container from '../components/Container';
 
 const MailboxPage: React.FC = () => {
@@ -11,6 +13,7 @@ const MailboxPage: React.FC = () => {
   const navigate = useNavigate();
   const {
     mailbox,
+    setMailbox,
     isLoading,
     emails,
     selectedEmail,
@@ -19,6 +22,7 @@ const MailboxPage: React.FC = () => {
     loadMailboxByAddress,
     showErrorMessage,
   } = useContext(MailboxContext);
+  const { emailDomains, defaultDomain } = useEmailDomains();
 
   useEffect(() => {
     if (!address) return;
@@ -39,18 +43,22 @@ const MailboxPage: React.FC = () => {
     load();
   }, [address]);
 
-  if (isLoading) {
-    return (
-      <Container>
-        <div className="flex justify-center items-center min-h-[50vh]">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-        </div>
-      </Container>
-    );
-  }
+  // 切换/更换邮箱后同步跳转到新地址对应的路由
+  const handleMailboxChange = (newMailbox: Mailbox) => {
+    setMailbox(newMailbox);
+    navigate(`/${newMailbox.address}`);
+  };
 
   return (
     <Container>
+      <MailboxHero
+        mailbox={mailbox}
+        onMailboxChange={handleMailboxChange}
+        domain={defaultDomain}
+        domains={emailDomains}
+        isLoading={isLoading}
+      />
+
       <EmailList
         emails={emails}
         selectedEmailId={selectedEmail}
