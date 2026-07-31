@@ -12,5 +12,6 @@
   </defs>
   <rect x="1" y="1" width="38" height="38" rx="12" fill="url(#logoBg)" />
   <rect x="1" y="1" width="38" height="38" rx="12" fill="url(#logoSheen)" />
-  <text x="20" y="25.5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', Arial, sans-serif" font-weight="700" font-size="21" fill="white">@</text>
+  <rect x="9" y="12" width="22" height="16" rx="3" fill="white" />
+  <path d="M9 12 L20 21 L31 12 Z" fill="#cfe0ff" />
 </svg>

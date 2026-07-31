@@ -15,7 +15,9 @@ const Header: React.FC = () => {
             to="/"
             className="flex items-center gap-2.5 transition-opacity hover:opacity-70"
           >
-            {/* 苹果风格圆角方形 App 图标：渐变底 + 简洁 @ 符号，缩略/小尺寸下依旧清晰，与 favicon 保持统一 */}
+            {/* 苹果风格圆角方形 App 图标：渐变底 + 居中信封图形。
+                信封主体 rect(x=9,y=12,w=22,h=16) 的几何中心正好是 (20,20)，
+                即整个 40x40 图标的正中心，靠坐标计算保证绝对居中，不依赖字体基线 */}
             <svg
               width="32"
               height="32"
@@ -37,17 +39,8 @@ const Header: React.FC = () => {
               </defs>
               <rect x="1" y="1" width="38" height="38" rx="12" fill="url(#logoBg)" />
               <rect x="1" y="1" width="38" height="38" rx="12" fill="url(#logoSheen)" />
-              <text
-                x="20"
-                y="25.5"
-                textAnchor="middle"
-                fontFamily="-apple-system, BlinkMacSystemFont, 'SF Pro Display', Arial, sans-serif"
-                fontWeight="700"
-                fontSize="21"
-                fill="white"
-              >
-                @
-              </text>
+              <rect x="9" y="12" width="22" height="16" rx="3" fill="white" />
+              <path d="M9 12 L20 21 L31 12 Z" fill="#cfe0ff" />
             </svg>
             <span className="gradient-text text-xl font-extrabold tracking-tight">
               {t('app.shortTitle')}

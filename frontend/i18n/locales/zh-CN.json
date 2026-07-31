@@ -11,22 +11,12 @@
   },
   "common": {
     "loading": "加载中...",
-    "error": "出错了",
     "copy": "复制",
-    "copied": "已复制",
     "delete": "删除",
-    "refresh": "刷新",
     "create": "创建",
     "cancel": "取消",
-    "confirm": "确认",
-    "submit": "提交",
-    "save": "保存",
     "close": "关闭",
     "back": "返回",
-    "success": "成功",
-    "failed": "失败",
-    "unknown": "未知",
-    "empty": "暂无数据",
     "switchToLight": "切换到浅色模式",
     "switchToDark": "切换到深色模式",
     "privacyPolicy": "隐私政策",
@@ -34,18 +24,7 @@
     "about": "关于我们"
   },
   "mailbox": {
-    "createRandom": "创建随机邮箱",
-    "createCustom": "创建自定义邮箱",
-    "address": "邮箱地址",
-    "customAddress": "自定义地址",
     "customAddressPlaceholder": "输入自定义地址",
-    "expiresIn": "有效期",
-    "expiresAt": "过期时间",
-    "created": "创建时间",
-    "timeLeft": "剩余时间",
-    "expired": "已过期",
-    "expiresInTime": "{{hours}}小时{{minutes}}分钟",
-    "expiresInMinutes": "{{minutes}}分钟",
     "copySuccess": "邮箱地址已复制到剪贴板",
     "copyFailed": "复制邮箱地址失败",
     "createSuccess": "邮箱创建成功",
@@ -60,7 +39,6 @@
     "refreshSuccess": "邮箱更换成功",
     "refreshFailed": "邮箱更换失败",
     "customize": "自定义邮箱",
-    "notFound": "邮箱不存在或已过期",
     "creatingNew": "正在创建新邮箱...",
     "switch": "切换邮箱",
     "switchSuccess": "邮箱切换成功",
@@ -76,39 +54,28 @@
     "inbox": "收件箱",
     "refresh": "刷新邮件",
     "refreshSuccess": "邮件列表已刷新",
-    "autoRefresh": "自动刷新",
     "autoRefreshOn": "自动刷新: 开",
     "autoRefreshOff": "自动刷新: 关",
     "from": "发件人",
     "to": "收件人",
-    "subject": "主题",
     "date": "日期",
     "content": "内容",
     "attachments": "附件",
-    "attachmentsNotSupported": "附件暂不支持下载",
     "noAttachments": "没有附件",
     "download": "下载",
     "videoNotSupported": "您的浏览器不支持视频播放",
     "audioNotSupported": "您的浏览器不支持音频播放",
     "noSubject": "无主题",
     "noContent": "无内容",
-    "emptyInbox": "邮箱为空",
     "waitingForEmails": "等待接收邮件...",
-    "refreshing": "正在刷新...",
     "deleteSuccess": "邮件删除成功",
     "deleteFailed": "邮件删除失败",
     "fetchFailed": "获取邮件失败",
     "notFound": "邮件不存在或已被删除",
-    "selectEmailPrompt": "请选择一封邮件查看详情",
     "message": "封邮件",
     "messages": "封邮件"
   },
-  "settings": {
-    "language": "语言",
-    "toggleTheme": "切换主题"
-  },
   "errors": {
-    "generic": "发生错误，请稍后重试",
     "notFound": "未找到请求的资源"
   },
   "intro": {
@@ -279,19 +246,8 @@
         "desc": "欢迎提交Pull Request和Issue"
       }
     },
-    "contact": {
-      "title": "联系我们",
-      "intro": "如果您在使用过程中遇到问题，或者有任何建议和反馈，欢迎通过以下方式联系我们：",
-      "github": {
-        "title": "GitHub Issues",
-        "desc": "在项目仓库中提交Issue"
-      },
-      "email": {
-        "title": "邮箱"
-      }
-    },
     "conclusion": "感谢您选择zmail临时邮箱服务！"
-    },
+  },
   "privacy": {
     "title": "隐私政策",
     "intro": "我们非常重视您的隐私保护。本隐私政策说明了我们如何收集、使用和保护您的信息。",
