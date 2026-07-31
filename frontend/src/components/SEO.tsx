@@ -19,7 +19,8 @@ const SEO: React.FC<SEOProps> = ({
   twitterCard = 'summary_large_image',
 }) => {
   const location = useLocation();
-  const url = `https://mail.wekh.eu.org${location.pathname}`;
+  // 使用当前访问的实际域名，而不是写死某个具体域名，这样无论部署到哪个域名下都能生成正确的链接
+  const url = `${window.location.origin}${location.pathname}`;
   const fullTitle = `${title} | 创建临时邮箱地址，接收邮件，无需注册，保护您的隐私安全`;
 
   useEffect(() => {

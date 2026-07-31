@@ -7,12 +7,11 @@
 
   <p>如果这个项目对您有帮助，请考虑给它一个 ⭐️ Star ⭐️，这将是对我最大的鼓励！</p>
 
-  <img src="frontend/public/favicon.svg" alt="ZMAIL Logo" width="120" height="120" style="background-color: #4f46e5; padding: 20px; border-radius: 12px; margin: 20px 0;">
+  <img src="frontend/public/favicon.svg" alt="ZMAIL Logo" width="120" height="120" style="background-color: #0a84ff; padding: 20px; border-radius: 12px; margin: 20px 0;">
 
   <h3>💌 安全、简单、即用即走的临时邮箱服务</h3>
 
   <p>
-    <a href="https://mail.wekh.eu.org" target="_blank"><strong>🌐 在线体验</strong></a> •
     <a href="#功能特点"><strong>✨ 功能特点</strong></a> •
     <a href="#快速部署"><strong>🚀 快速部署</strong></a> •
     <a href="#本地开发"><strong>💻 本地开发</strong></a> •
@@ -94,7 +93,7 @@ ZMAIL 现在采用全新的一体化部署方式，前端和后端整合为一�
     <li>填写应用名称和数据库名称</li>
     <li>在高级设置 -> 构建变量中设置：
       <ul>
-        <li><code>VITE_EMAIL_DOMAIN</code>: 您的域名列表，使用 ',' 分割 (例如: wekh.eu.org,example.com)</li>
+        <li><code>VITE_EMAIL_DOMAIN</code>: 您的域名列表，使用 ',' 分割 (例如: your-domain.com,example.com)</li>
       </ul>
     </li>
     <li>点击"创建和部署"</li>
