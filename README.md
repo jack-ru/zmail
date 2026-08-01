@@ -41,7 +41,7 @@ ZMAIL 采用一体化部署方式，前端和后端整合为一个 Cloudflare Wo
 
    | 密钥 | 说明 |
    |:---|:---|
-   | `CF_API_TOKEN` | Cloudflare API Token（[创建链接](https://dash.cloudflare.com/profile/api-tokens)，使用 "Edit Cloudflare Workers" 模板） |
+   | `CF_API_TOKEN` | Cloudflare API Token（[点击创建](https://dash.cloudflare.com/profile/api-tokens)，使用 "Edit Cloudflare Workers" 模板） |
    | `CF_ACCOUNT_ID` | Cloudflare 账户 ID（在 Workers 页面右侧可找到） |
    | `D1_DATABASE_ID` | 上一步创建的 D1 数据库 ID |
    | `D1_DATABASE_NAME` | 上一步创建的 D1 数据库名称 |
