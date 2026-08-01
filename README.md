@@ -2,7 +2,7 @@
 
 # 🚀 ZMAIL - 6小时临时邮箱服务
 
-<img src="frontend/public/favicon.svg" alt="ZMAIL Logo" width="120" height="120" style="background-color: #4f46e5; padding: 20px; border-radius: 12px; margin: 20px 0;">
+<img src="frontend/public/favicon.svg" alt="ZMAIL Logo" width="120" height="120" style="background-color: #0a84ff; padding: 20px; border-radius: 12px; margin: 20px 0;">
 
 **💌 安全、简单、即用即走的临时邮箱服务**
 
